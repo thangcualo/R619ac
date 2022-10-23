@@ -14,6 +14,14 @@ name: Build OpenWrt R619AC
 
 on:
   repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+      
+#  repository_dispatch:
 #  release:
 #    types: published
 #  push:
@@ -21,8 +29,8 @@ on:
 #      - master
 #    paths:
 #      - 'r619ac.config'
-  schedule:
-    - cron: 30 2 * * *
+#  schedule:
+#    - cron: 30 2 * * *
 #          分 时 日 月 周5
 #   - cron: 0 8 */15 * *
 #  watch:
